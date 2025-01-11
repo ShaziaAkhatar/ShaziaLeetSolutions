@@ -11,7 +11,7 @@
  */
 public class Solution {
     public boolean hasCycle(ListNode head) {
-        ListNode tmp=head;
+    /*    ListNode tmp=head;
    boolean flag=false;
         ListNode i;
         HashMap<ListNode,Boolean> hm=new HashMap<>();
@@ -20,6 +20,19 @@ public class Solution {
         hm.put(i,true);
      }
      return false;
-        
+     */
+     ListNode slow=head;
+     ListNode fast=head;
+
+     while(fast!=null && fast.next!=null){
+        slow=slow.next;
+        fast=fast.next.next;
+        if(slow==fast){
+            return true;
+        }
+      
+     }
+     return false;
+
     }
 }
