@@ -1,6 +1,6 @@
 class Solution {
     public void rotate(int[][] matrix) {
-        
+        //transpose the matrix
         int row=matrix.length;
         int column=matrix[0].length;
        for(int i=0;i<row-1;i++){
@@ -10,7 +10,7 @@ class Solution {
             matrix[j][i]=temp;
         }
        }
-
+//reverse each row
        for(int i=0;i<row;i++){
         reverse(matrix[i]);
        }
