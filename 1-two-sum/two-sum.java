@@ -21,18 +21,16 @@ class Solution {
         Map<Integer,Integer> map = new HashMap<Integer,Integer>();
         
         for(int i=0;i<nums.length;i++){
-            map.put(i,nums[i]);
+            map.put(nums[i],i);
         }
         int[]result = new int[2];
 
          for(int i=0;i<nums.length;i++){
                 
-            for(Map.Entry<Integer,Integer> entry:map.entrySet()){
-                if(entry.getKey()!=i && entry.getValue()==target-nums[i]){
-                    result[0]=i;
-                    result[1]=entry.getKey();
-                   return result;
-                }
+            if(map.containsKey(target-nums[i])&& map.get(target-nums[i])!=i){
+                result[0]=i;
+                result[1]=map.get(target-nums[i]);
+                return result;
             }
          }
         
